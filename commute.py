@@ -2,13 +2,10 @@ import discord
 import sqlite3
 import time
 
-'''
-achannel , token 값 수정해야됩니다
-봇 켤시 데이터베이스 자동생성
-'''
+token = '★봇토큰★'
+achannel = '★출퇴근 알림 채널ID★'
 
 client = discord.Client()
-token = '★봇토큰★'
 
 @client.event
 async def on_connect():
@@ -28,9 +25,6 @@ async def on_connect():
 
 @client.event
 async def on_message(message):
-    achannel = ★출퇴근 알림 채널ID★
-
-
     if message.content == '!명령어':
         embed = discord.Embed(title='명령어', description='!출근\n!퇴근\n!등록여부\n!등록 @유저')
         await message.channel.send(embed=embed)
